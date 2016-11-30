@@ -1,0 +1,41 @@
+<h1>Editing Workouts</h1>
+
+<%= form_for :exercise, url: exercise_path(@exercise), method: :patch do |f| %>
+
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@exercise.errors.count, "error") %> prohibited
+        this exercise from being saved:
+      </h2>
+      <ul>
+        <% @exercise.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :workout %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :photoUrl %><br>
+    <%= f.text_field :photoUrl %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description%>
+  </p>
+  <p>
+    <%= f.label :video %><br>
+    <%= f.text_field :description%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+  <%= link_to 'Back', categories_path %>

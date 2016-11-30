@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :muscles
+  resources :muscles do
+    resources :exercises
+  end
 
   root 'muscles#index'
 
