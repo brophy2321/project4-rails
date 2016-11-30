@@ -1,0 +1,16 @@
+<h1>Muscle Groups</h1>
+
+
+
+
+      <%@muscles.each do |muscle| %>
+        <tr>
+
+          <td class= "muscle-name"><td> <%= muscle.title %></td>
+          <td><%= link_to 'Show', muscle_path(muscle) %></td>
+
+          <td><img src = "<%= muscle.photoUrl %>"/></td><br>
+
+          </tr>
+          <% end %>
+        </table>
