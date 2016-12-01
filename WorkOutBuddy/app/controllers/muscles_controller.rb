@@ -19,7 +19,7 @@
   def create
     @muscle = Muscle.new(muscle_params)
     if @muscle.save
-      redirect_to @muscle
+      redirect_to @muscle.exercise
     else
       render 'new'
     end

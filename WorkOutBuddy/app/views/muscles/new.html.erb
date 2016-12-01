@@ -1,7 +1,7 @@
-<%= form_for :exercise, url: exercises_path do |f| %>
+<%= form_for :exercise do |f| %>
   <p>
     <%= f.label :workout %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :workout%>
   </p>
   <p>
     <%= f.label :photoUrl %><br>
@@ -20,5 +20,7 @@
 
   <p>
     <%= f.submit %>
+    
+
   </p>
 <% end %>
