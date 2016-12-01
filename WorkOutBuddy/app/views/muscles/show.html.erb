@@ -1,9 +1,9 @@
-<p>
-  <strong>Muscle Category:</strong>
-  <%= @muscle.title %>
-</p>
+  <h2><% @muscle.title %></h2>
+  <% @muscle.exercises.each do |exercise| %>
 
-<p>
-  <img src= "<%= @muscle.photoUrl %>">
-</p>
-<%= link_to 'Back', muscles_path %>
+  <p><%= exercise.workout %></p>
+  <p><img src= "<%= exercise.photoUrl %>"/>
+    </p>
+    <%= link_to 'Show', muscle_exercise_path(exercise) %>
+
+  <%end%>

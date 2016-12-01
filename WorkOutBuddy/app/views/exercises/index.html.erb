@@ -1,16 +1,12 @@
 <h1>Exercises for this muscle group</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Photo</th>
-  </tr>
   <% @exercises.each do |exercise| %>
 
     <tr>
       <td><%= exercise.workout %></td>
-      
       <td><img src= "<%= exercise.photoUrl%>"></td>
+
     </tr>
   <% end %>
 </table>

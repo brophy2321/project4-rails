@@ -1,25 +1,47 @@
   class MusclesController < ApplicationController
-      before_action :set_muscle, only: [:show]
     def index
-      @muscles = Muscle.all
-        # render json: @muscles
-    end
-
-    def show
-      @muscle = Muscle.find(params[:id])
-      respond_to do |format|
-          format.html {render :show}
-          format.json {render json: @category, include: :exercises}
+    @muscles = Muscle.all
   end
-end
-private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_muscle
+
+  def show
+    @muscle = Muscle.find(params[ :id])
+    @exercise = Exercise.new
+  end
+
+  def new
+    @muscle = Muscle.new
+  end
+
+  def edit
     @muscle = Muscle.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  def create
+    @muscle = Muscle.new(muscle_params)
+    if @muscle.save
+      redirect_to @muscle
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @muscle = Muscle.find(params[:id])
+
+    if @muscle.update(muscle_params)
+      redirect_to @muscle
+    else
+      render 'edit'
+    end
+  end
+  def destroy
+    @muscle = Muscle.find(params[:id])
+    @muscle.destroy
+
+      redirect_to muscles_path
+    end
+  private
   def muscle_params
-    params.require(:muscle).permit(:title, :photo_url)
+    params.require( :muscle).permit( :muscle)
   end
 end
