@@ -1,26 +1,2 @@
-<%= form_for :exercise do |f| %>
-  <p>
-    <%= f.label :workout %><br>
-    <%= f.text_field :workout%>
-  </p>
-  <p>
-    <%= f.label :photoUrl %><br>
-    <%= f.text_area :photoUrl %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %><br>
-  </p>
-  <p>
-    <%= f.label :video%><br>
-    <%= f.text_area :description %><br>
-  </p>
-
-
-  <p>
-    <%= f.submit %>
-    
-
-  </p>
-<% end %>
+<%= render 'form' %>
+<% link_to 'Back', muscles_path %>

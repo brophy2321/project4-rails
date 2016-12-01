@@ -1,3 +1,15 @@
 // Place all the styles related to the Muscles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background: url("http://www.foreverfitness24.com/wp-content/uploads/2014/08/gym.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+h2 {
+  color: red;
+  text-shadow: 3px 3px 3px black;
+  font-size: 60px;
+}
